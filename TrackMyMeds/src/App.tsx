@@ -5,8 +5,12 @@ function App() {
   return (
     <>
       <div>
-        <img src={medicalLogo} className="logo" alt="Vite logo" />
-        <h1>Track My Meds!</h1>
+        <div className="w-10">
+          <img src={medicalLogo} alt="Vite logo" />
+        </div>
+        <h1 className="text-3xl text-orange-500 font-bold underline">
+          Track My Meds!
+        </h1>
       </div>
     </>
   );
