@@ -1,13 +1,14 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/AddMedication")({
+  component: AddMedication,
+});
 
 function AddMedication() {
   return (
     <main>
-      <Header />
       <h1 className="text-xl font-bold">Add Medication</h1>
       <p>Use this form to add your medication details.</p>
-      <Footer />
     </main>
   );
 }

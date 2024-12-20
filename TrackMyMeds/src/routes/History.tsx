@@ -1,13 +1,14 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/History")({
+  component: History,
+});
 
 function History() {
   return (
     <main>
-      <Header />
       <h1 className="text-xl font-bold">Medication History</h1>
       <p>See your medication usage history.</p>
-      <Footer />
     </main>
   );
 }
