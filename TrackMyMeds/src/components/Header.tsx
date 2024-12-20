@@ -5,6 +5,10 @@ import medicalLogo from "/medical_logo.svg";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-white shadow-md">
       <div className="flex items-center justify-between px-6 py-4">
@@ -102,6 +106,7 @@ function Header() {
         <nav className="block md:hidden bg-white shadow-md">
           <Link
             to="/"
+            onClick={closeMenu}
             activeProps={{ className: "font-bold underline" }}
             activeOptions={{ exact: true }}
             className="block py-2 px-6 text-gray-600 hover:text-blue-600 transition-colors duration-300"
@@ -110,6 +115,7 @@ function Header() {
           </Link>
           <Link
             to="/AddMedication"
+            onClick={closeMenu}
             activeProps={{ className: "font-bold underline" }}
             activeOptions={{ exact: true }}
             className="block py-2 px-6 text-gray-600 hover:text-blue-600 transition-colors duration-300"
@@ -118,6 +124,7 @@ function Header() {
           </Link>
           <Link
             to="/MedicationList"
+            onClick={closeMenu}
             activeProps={{ className: "font-bold underline" }}
             activeOptions={{ exact: true }}
             className="block py-2 px-6 text-gray-600 hover:text-blue-600 transition-colors duration-300"
@@ -126,6 +133,7 @@ function Header() {
           </Link>
           <Link
             to="/History"
+            onClick={closeMenu}
             activeProps={{ className: "font-bold underline" }}
             activeOptions={{ exact: true }}
             className="block py-2 px-6 text-gray-600 hover:text-blue-600 transition-colors duration-300"
@@ -134,6 +142,7 @@ function Header() {
           </Link>
           <Link
             to="/Auth"
+            onClick={closeMenu}
             activeProps={{ className: "font-bold underline" }}
             activeOptions={{ exact: true }}
             className="block py-2 px-6 text-gray-600 hover:text-blue-600 transition-colors duration-300"
