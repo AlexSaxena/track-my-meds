@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import WeeklyMedicationChart from "@/components/ui/pieChart";
 
 export const Route = createFileRoute("/Home")({
   component: Home,
@@ -27,11 +28,9 @@ function Home() {
         Keep track of all your medications effortlessly!
       </p>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-        <article className="p-4 bg-white border border-gray-200 rounded-lg shadow-md">
-          <h2 className="text-lg font-semibold mb-4">
-            Medications Not Taken Today
-          </h2>
+      <section className="grid grid-cols-1 md:grid-cols-5 gap-6 w-full">
+        <article className="col-span-3 p-4 bg-white border border-gray-200 rounded-lg shadow-md">
+          <h2 className="text-lg font-semibold mb-4">Today's Medications</h2>
           <Table className="border-t border-gray-200">
             <TableCaption>A list of medications yet to be taken.</TableCaption>
             <TableHeader>
@@ -56,7 +55,7 @@ function Home() {
                       size="sm"
                       onClick={() => alert("Mark as taken")}
                     >
-                      {med.status === "Consumed" ? "Undo" : "Mark as taken"}
+                      {med.status === "Consumed" ? "Undo" : "Mark as Taken"}
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -65,39 +64,11 @@ function Home() {
           </Table>
         </article>
 
-        <article className="p-4 bg-white border border-gray-200 rounded-lg shadow-md">
+        <article className="col-span-2 p-4 bg-white border border-gray-200 rounded-lg shadow-md flex items-center justify-center flex-col">
           <h2 className="text-lg font-semibold mb-4">
-            Medications Already Taken Today
+            This Week's Medication Summary
           </h2>
-          <Table className="border-t border-gray-200">
-            <TableCaption>
-              A list of medications already taken today.
-            </TableCaption>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[100px]">Medication</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Amount</TableHead>
-                <TableHead className="text-right">Action</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">Ibuprofen</TableCell>
-                <TableCell>Done</TableCell>
-                <TableCell>5</TableCell>
-                <TableCell className="text-right">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => alert("Undo action")}
-                  >
-                    Undo
-                  </Button>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+          <WeeklyMedicationChart />
         </article>
       </section>
     </div>
