@@ -14,6 +14,11 @@ export const Route = createFileRoute("/Home")({
   component: Home,
 });
 
+const medicationsArray = [
+  { id: 1, medication: "Alvedon", dosage: 2, status: "Not Consumed" },
+  { id: 2, medication: "Ipren", dosage: 1, status: "Consumed" },
+];
+
 function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -38,20 +43,24 @@ function Home() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">Alvedon</TableCell>
-                <TableCell>Not Consumed</TableCell>
-                <TableCell>10</TableCell>
-                <TableCell className="text-right">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => alert("Mark as taken")}
-                  >
-                    Mark as Taken
-                  </Button>
-                </TableCell>
-              </TableRow>
+              {medicationsArray.map((med) => (
+                <TableRow key={med.id}>
+                  <TableCell className="font-medium">
+                    {med.medication}
+                  </TableCell>
+                  <TableCell>{med.status}</TableCell>
+                  <TableCell>{med.dosage}</TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => alert("Mark as taken")}
+                    >
+                      {med.status === "Consumed" ? "Undo" : "Mark as taken"}
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </article>
