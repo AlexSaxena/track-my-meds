@@ -16,8 +16,8 @@ export const Route = createFileRoute("/Home")({
 });
 
 const medicationsArray = [
-  { id: 1, medication: "Alvedon", dosage: 2, status: "Not Consumed" },
-  { id: 2, medication: "Ipren", dosage: 1, status: "Consumed" },
+  { id: 1, name: "Alvedon", dosage: 2, status: "Not Consumed" },
+  { id: 2, name: "Ipren", dosage: 1, status: "Consumed" },
 ];
 
 function Home() {
@@ -44,9 +44,7 @@ function Home() {
             <TableBody>
               {medicationsArray.map((med) => (
                 <TableRow key={med.id}>
-                  <TableCell className="font-medium">
-                    {med.medication}
-                  </TableCell>
+                  <TableCell className="font-medium">{med.name}</TableCell>
                   <TableCell>{med.status}</TableCell>
                   <TableCell>{med.dosage}</TableCell>
                   <TableCell className="text-right">
