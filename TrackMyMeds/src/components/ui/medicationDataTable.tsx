@@ -43,7 +43,7 @@ function MedicationDataTable() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto bg-white border rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-4">Medication List</h1>
+      <h1 className="text-2xl font-bold mb-4">Medications</h1>
       <Table className="border-t border-gray-200">
         <TableHeader>
           <TableRow>

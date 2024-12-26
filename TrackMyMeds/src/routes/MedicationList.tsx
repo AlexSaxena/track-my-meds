@@ -7,11 +7,13 @@ export const Route = createFileRoute("/MedicationList")({
 
 function MedicationList() {
   return (
-    <main>
-      <h1 className="text-xl font-bold">Medication List</h1>
-      <p>View all your medications here.</p>
+    <div>
+      <h1 className="text-center text-2xl font-bold mb-4">Medication List</h1>
+      <p className="text-center mb-6 text-gray-600">
+        Manage & View all your medications here.
+      </p>
       <MedicationDataTable />
-    </main>
+    </div>
   );
 }
 
