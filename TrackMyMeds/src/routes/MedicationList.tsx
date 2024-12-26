@@ -1,3 +1,4 @@
+import MedicationDataTable from "@/components/ui/medicationDataTable";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/MedicationList")({
@@ -9,6 +10,7 @@ function MedicationList() {
     <main>
       <h1 className="text-xl font-bold">Medication List</h1>
       <p>View all your medications here.</p>
+      <MedicationDataTable />
     </main>
   );
 }
