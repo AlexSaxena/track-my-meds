@@ -8,8 +8,12 @@ export const Route = createFileRoute("/AddMedication")({
 function AddMedication() {
   return (
     <main>
-      <h1 className="text-xl font-bold">Add Medication</h1>
-      <p>Use this form to add your medication details.</p>
+      <div className="text-center block ">
+        <h1 className="text-2xl font-bold mb-4">Medication form</h1>
+        <p className="mb-6 text-gray-600">
+          Use this form to add your new medication details.
+        </p>
+      </div>
       <MedicationForm />
     </main>
   );
