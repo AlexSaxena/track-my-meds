@@ -8,33 +8,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-
-const defaultMeds = [
-  {
-    id: 1,
-    name: "Alvedon",
-    dosage: 2,
-    frequency: "Daily",
-    status: "Active",
-  },
-  {
-    id: 2,
-    name: "Ipren",
-    dosage: 1,
-    frequency: "As Needed",
-    status: "Active",
-  },
-  {
-    id: 3,
-    name: "Vitamin D",
-    dosage: 1,
-    frequency: "Weekly",
-    status: "Inactive",
-  },
-];
+import medicationList from "@/data/medicationList.json";
 
 function MedicationDataTable() {
-  const [medications, setMedications] = useState(defaultMeds);
+  const [medications, setMedications] = useState(medicationList);
 
   const handleDelete = (id: number) => {
     const updatedMedications = medications.filter((med) => med.id !== id);

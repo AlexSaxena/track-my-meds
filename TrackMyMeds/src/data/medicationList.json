@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Alvedon",
+    "dosage": 2,
+    "frequency": "Daily",
+    "status": "Active",
+    "startDate": "2024-12-05",
+    "endDate": "-"
+  },
+  {
+    "id": 2,
+    "name": "Ipren",
+    "dosage": 1,
+    "frequency": "As Needed",
+    "status": "Inactive",
+    "startDate": "2024-12-05",
+    "endDate": "2024-12-28"
+  },
+  {
+    "id": 3,
+    "name": "Vitamin D",
+    "dosage": 1,
+    "frequency": "Weekly",
+    "status": "Inactive",
+    "startDate": "2024-12-05",
+    "endDate": "2024-12-05"
+  },
+  {
+    "id": 4,
+    "name": "Paracetamol",
+    "dosage": 2,
+    "frequency": "Twice Daily",
+    "status": "Active",
+    "startDate": "2024-11-30",
+    "endDate": "-"
+  },
+  {
+    "id": 5,
+    "name": "Ibuprofen",
+    "dosage": 1,
+    "frequency": "As Needed",
+    "status": "Inactive",
+    "startDate": "2024-10-01",
+    "endDate": "2024-11-15"
+  },
+  {
+    "id": 6,
+    "name": "Amoxicillin",
+    "dosage": 1,
+    "frequency": "Three Times Daily",
+    "status": "Inactive",
+    "startDate": "2024-09-20",
+    "endDate": "2024-09-27"
+  },
+  {
+    "id": 7,
+    "name": "Cetirizine",
+    "dosage": 1,
+    "frequency": "Daily",
+    "status": "Active",
+    "startDate": "2024-12-01",
+    "endDate": "-"
+  },
+  {
+    "id": 8,
+    "name": "Calcium",
+    "dosage": 1,
+    "frequency": "Daily",
+    "status": "Inactive",
+    "startDate": "2024-11-01",
+    "endDate": "2024-11-30"
+  },
+  {
+    "id": 9,
+    "name": "Multivitamins",
+    "dosage": 1,
+    "frequency": "Weekly",
+    "status": "Active",
+    "startDate": "2024-12-03",
+    "endDate": "-"
+  },
+  {
+    "id": 10,
+    "name": "Aspirin",
+    "dosage": 1,
+    "frequency": "As Needed",
+    "status": "Inactive",
+    "startDate": "2024-10-15",
+    "endDate": "2024-11-05"
+  }
+]
