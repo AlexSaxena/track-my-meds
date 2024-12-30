@@ -11,26 +11,27 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import WeeklyMedicationChart from "@/components/ui/pieChart";
+import medicationList from "@/data/medicationList.json";
 
 export const Route = createFileRoute("/Home")({
   component: Home,
 });
 
-const initialMedications = [
-  { id: 1, name: "Alvedon", dosage: 2, status: "Not Consumed" },
-  { id: 2, name: "Ipren", dosage: 1, status: "Consumed" },
-];
-
 function Home() {
-  const [medications, setMedications] = useState(initialMedications);
+  const [medications, setMedications] = useState(
+    medicationList.filter(
+      (med) => med.frequency === "Daily" && med.status === "Active"
+    )
+  );
 
-  const toggleStatus = (id: number) => {
+  const toggleDailyStatus = (id: number) => {
     setMedications((prevMedications) =>
       prevMedications.map((med) =>
         med.id === id
           ? {
               ...med,
-              status: med.status === "Consumed" ? "Not Consumed" : "Consumed",
+              dailyStatus:
+                med.dailyStatus === "Consumed" ? "Not Consumed" : "Consumed",
             }
           : med
       )
@@ -48,7 +49,9 @@ function Home() {
         <article className="col-span-3 p-4 bg-white border border-gray-200 rounded-lg shadow-md">
           <h2 className="text-lg font-semibold mb-4">Today's Medications</h2>
           <Table className="border-t border-gray-200">
-            <TableCaption>A list of medications yet to be taken.</TableCaption>
+            <TableCaption>
+              A list of active medications to be taken today.
+            </TableCaption>
             <TableHeader>
               <TableRow>
                 <TableHead className="w-[100px]">Medication</TableHead>
@@ -61,15 +64,17 @@ function Home() {
               {medications.map((med) => (
                 <TableRow key={med.id}>
                   <TableCell className="font-medium">{med.name}</TableCell>
-                  <TableCell>{med.status}</TableCell>
+                  <TableCell>{med.dailyStatus}</TableCell>
                   <TableCell>{med.dosage}</TableCell>
                   <TableCell className="text-right">
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => toggleStatus(med.id)}
+                      onClick={() => toggleDailyStatus(med.id)}
                     >
-                      {med.status === "Consumed" ? "Undo" : "Mark as Taken"}
+                      {med.dailyStatus === "Consumed"
+                        ? "Undo"
+                        : "Mark as Taken"}
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -78,7 +83,6 @@ function Home() {
           </Table>
         </article>
 
-        {/* Weekly Summary Chart */}
         <article className="col-span-2 p-4 bg-white border border-gray-200 rounded-lg shadow-md flex items-center justify-center flex-col">
           <h2 className="text-lg font-semibold mb-4">
             This Week's Medication Summary
