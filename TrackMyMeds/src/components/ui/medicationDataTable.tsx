@@ -15,7 +15,7 @@ function MedicationDataTable() {
     medicationList.filter((med) => med.status == "Active")
   );
 
-  const handleDelete = (id: number) => {
+  const handleInactivate = (id: number) => {
     const updatedMedications = medications.filter((med) => med.id !== id);
     setMedications(updatedMedications);
   };
@@ -59,19 +59,11 @@ function MedicationDataTable() {
                 </TableCell>
                 <TableCell className="text-right">
                   <Button
-                    variant="outline"
+                    className="bg-yellow-400 text-black hover:bg-yellow-500 focus:ring-yellow-500 focus:ring-offset-yellow-200 transition-colors duration-200 rounded-md"
                     size="sm"
-                    onClick={() => alert(`Edit ${med.name}`)}
+                    onClick={() => handleInactivate(med.id)}
                   >
-                    Edit
-                  </Button>
-                  <Button
-                    variant="destructive"
-                    size="sm"
-                    className="ml-2"
-                    onClick={() => handleDelete(med.id)}
-                  >
-                    Delete
+                    Inactivate
                   </Button>
                 </TableCell>
               </TableRow>
