@@ -6,7 +6,8 @@
     "frequency": "Daily",
     "status": "Active",
     "startDate": "2024-12-05",
-    "endDate": "-"
+    "endDate": "-",
+    "dailyStatus": "Not Consumed"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "frequency": "As Needed",
     "status": "Inactive",
     "startDate": "2024-12-05",
-    "endDate": "2024-12-28"
+    "endDate": "2024-12-28",
+    "dailyStatus": "N/A"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "frequency": "Weekly",
     "status": "Inactive",
     "startDate": "2024-12-05",
-    "endDate": "2024-12-05"
+    "endDate": "2024-12-05",
+    "dailyStatus": "N/A"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "frequency": "Twice Daily",
     "status": "Active",
     "startDate": "2024-11-30",
-    "endDate": "-"
+    "endDate": "-",
+    "dailyStatus": "Not Consumed"
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "frequency": "As Needed",
     "status": "Inactive",
     "startDate": "2024-10-01",
-    "endDate": "2024-11-15"
+    "endDate": "2024-11-15",
+    "dailyStatus": "N/A"
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "frequency": "Three Times Daily",
     "status": "Inactive",
     "startDate": "2024-09-20",
-    "endDate": "2024-09-27"
+    "endDate": "2024-09-27",
+    "dailyStatus": "N/A"
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "frequency": "Daily",
     "status": "Active",
     "startDate": "2024-12-01",
-    "endDate": "-"
+    "endDate": "-",
+    "dailyStatus": "Not Consumed"
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "frequency": "Daily",
     "status": "Inactive",
     "startDate": "2024-11-01",
-    "endDate": "2024-11-30"
+    "endDate": "2024-11-30",
+    "dailyStatus": "N/A"
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "frequency": "Weekly",
     "status": "Active",
     "startDate": "2024-12-03",
-    "endDate": "-"
+    "endDate": "-",
+    "dailyStatus": "N/A"
   },
   {
     "id": 10,
@@ -87,6 +96,7 @@
     "frequency": "As Needed",
     "status": "Inactive",
     "startDate": "2024-10-15",
-    "endDate": "2024-11-05"
+    "endDate": "2024-11-05",
+    "dailyStatus": "N/A"
   }
 ]
