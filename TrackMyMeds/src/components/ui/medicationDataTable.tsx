@@ -62,7 +62,17 @@ function MedicationDataTable() {
                 {med.dosage} {med.dosage < 2 ? "tablet" : "tablets"}
               </TableCell>
               <TableCell>{med.frequency}</TableCell>
-              <TableCell>{med.status}</TableCell>
+              <TableCell>
+                <span
+                  className={`px-2 py-1 rounded ${
+                    med.status === "Active"
+                      ? "bg-green-200 text-green-800"
+                      : "bg-gray-200 text-gray-800"
+                  }`}
+                >
+                  {med.status}
+                </span>
+              </TableCell>
               <TableCell className="text-right">
                 <Button
                   variant="outline"
