@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Table,
   TableBody,
@@ -15,12 +16,27 @@ export const Route = createFileRoute("/Home")({
   component: Home,
 });
 
-const medicationsArray = [
+const initialMedications = [
   { id: 1, name: "Alvedon", dosage: 2, status: "Not Consumed" },
   { id: 2, name: "Ipren", dosage: 1, status: "Consumed" },
 ];
 
 function Home() {
+  const [medications, setMedications] = useState(initialMedications);
+
+  const toggleStatus = (id: number) => {
+    setMedications((prevMedications) =>
+      prevMedications.map((med) =>
+        med.id === id
+          ? {
+              ...med,
+              status: med.status === "Consumed" ? "Not Consumed" : "Consumed",
+            }
+          : med
+      )
+    );
+  };
+
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4">Welcome to TrackMyMeds</h1>
@@ -42,7 +58,7 @@ function Home() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {medicationsArray.map((med) => (
+              {medications.map((med) => (
                 <TableRow key={med.id}>
                   <TableCell className="font-medium">{med.name}</TableCell>
                   <TableCell>{med.status}</TableCell>
@@ -51,7 +67,7 @@ function Home() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => alert("Mark as taken")}
+                      onClick={() => toggleStatus(med.id)}
                     >
                       {med.status === "Consumed" ? "Undo" : "Mark as Taken"}
                     </Button>
@@ -62,6 +78,7 @@ function Home() {
           </Table>
         </article>
 
+        {/* Weekly Summary Chart */}
         <article className="col-span-2 p-4 bg-white border border-gray-200 rounded-lg shadow-md flex items-center justify-center flex-col">
           <h2 className="text-lg font-semibold mb-4">
             This Week's Medication Summary
