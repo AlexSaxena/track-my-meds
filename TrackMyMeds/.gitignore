@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 
-*routeTree.gen.ts
+# *routeTree.gen.ts
