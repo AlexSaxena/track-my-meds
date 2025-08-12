@@ -40,7 +40,7 @@ function Footer() {
         <hr className="my-6 border-gray-200 lg:my-8" />
 
         <span className="block text-sm text-gray-500 sm:text-center">
-          © 2024
+          © 2025
           <Link to="/" className="hover:underline">
             TrackMyMeds™
           </Link>
